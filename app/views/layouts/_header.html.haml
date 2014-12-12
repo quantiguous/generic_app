@@ -1,0 +1,24 @@
+%a.brand{:href => "/"}
+  Generic App
+- unless current_user.nil?
+  %span.caption
+    .brand_name
+      &nbsp;Generic App&nbsp;
+  %form.search{:action => "/"}
+    %input.search-query{:name => "search", :placeholder => "Search", :type => "text", :autocomplete=>"off", :style => "width: 100px;"}
+  %ul.nav
+    %li
+      %a{:href => "/"}
+        %i.icon-list
+        Dashboard
+    %li#user.dropdown
+      = link_to content_tag(:span, content_tag(:i, '', :class=>"icon icon-white icon-user") + "#{current_user.name}"),"#"
+      %ul.dropdown-menu
+        %li
+          = (link_to "Sign out", destroy_user_session_path, :method => :delete)
+- else
+  %span.caption
+    .brand_name
+      &nbsp;&nbsp; Generic App &nbsp
+:javascript
+  $('.search-query').placeholder();

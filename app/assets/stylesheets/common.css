@@ -1,0 +1,136 @@
+
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark {
+  font-family: Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  color: #222222;
+}
+small {
+  font-family: Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 11px;
+  line-height: 20px;
+  color: red;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2 {
+	font-weight: bold;
+	color: #666666;
+	margin: 10px 0px 0px 5px;
+}
+
+h3, h4 {
+	font-color: #666666;
+	font-weight: bold;
+}
+
+.comment_show {
+	font-size: 14px;
+	color: #22229F;
+	margin: 5px 0px 0px 5px;
+}
+
+.comment_status {
+	color: #9F2222;
+}
+
+h3 {
+	margin: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: #0088CC;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.icon {
+	background: url("glyphicons-halflings.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	float: left;
+	margin: 7px 3px 0px 0px
+}
+
+.icon.icon-white {
+	background-image: url("glyphicons-halflings-white.png");
+}
+
+.icon-user {
+	background-position: -170px 0px;
+}
+
+.icon-list-alt {
+	background-position: -264px -24px;
+}
+
+.icon-remove {
+	background-position: -310px 0px;
+}
+
+#generic-app li a .caret {
+	border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #CCCCCC;
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: top;
+  width: 0;
+  margin-left: 2px;
+  margin-top: 21px;
+  border-bottom-color: #CCCCCC;
+  border-top-color: #CCCCCC;
+}
+
+#generic-app h2.collapsible {
+	line-height: 30px;
+	border: #ddd solid;
+	border-width: 1px 0px;
+	cursor: pointer;
+}
+
+#generic-app h2.collapsible + .collapsible-content {
+	display: none;
+}
+
+#generic-app h2.collapsible .caret {
+	border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #333;
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: top;
+  width: 0;
+  margin-left: 2px;
+  margin-top: 15px;
+  border-bottom-color: #333;
+  border-top-color: #333;
+}
+
+#error-message, .errorMessage{
+  color:red;
+}
+
+.customMessage{
+  color:blue;
+}

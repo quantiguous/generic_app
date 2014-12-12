@@ -1,0 +1,17 @@
+.span4
+.span4
+  .well
+    %h2 Sign Up
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      = f.label :username
+      = f.text_field :username, :autofocus => true, :class=>"span3"
+      = f.label :email
+      = f.email_field :email, :class=>"span3"
+      = f.label :password
+      = f.password_field :password, :class=>"span3"
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, :class=>"span3"
+      = f.submit "Sign up" ,:class=>"btn btn-primary"
+      .clearfix
+    = render "devise/shared/links"

@@ -1,0 +1,20 @@
+= semantic_form_for [:admin, @user] do |f|
+  = f.inputs "User Details" do
+    = f.input :username , :label=>"User Id"
+    - unless CONFIG[:authenticate_devise_with_ldap]
+      = f.input :first_name
+      = f.input :last_name
+      = f.input :email
+      = f.input :mobile_no
+      = f.input :password
+      = f.input :password_confirmation
+    - else
+      = f.input :first_name, :as=>:hidden
+    %li
+      = f.check_box :inactive
+      = f.label "Inactive", :for => 'inactive_generic_app'
+    = f.input :role, :as => :multiple_select, :collection => Role.all.collect {|r| [r.name.camelize, r.id]}
+  = f.actions do
+    = f.action :submit
+    %li.cancel
+      = link_to "Cancel", "/admin/users"

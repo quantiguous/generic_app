@@ -1,0 +1,8 @@
+development:
+  authenticate_devise_with_ldap: false
+
+test:
+  authenticate_devise_with_ldap: false
+
+production:
+  authenticate_devise_with_ldap: false
