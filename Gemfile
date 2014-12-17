@@ -35,6 +35,8 @@ gem 'devise_security_extension'
 gem 'secure_headers'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
+gem 'therubyracer'
+gem "daemons"
 # Used only if oracle db is being used
 group :oracle do
   gem 'activerecord-oracle_enhanced-adapter'
