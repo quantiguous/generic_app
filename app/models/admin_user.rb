@@ -7,7 +7,7 @@ class AdminUser < ActiveRecord::Base
          :rememberable, :trackable, :validatable, :timeoutable, :session_limitable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :inactive
+  # attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :inactive
   # attr_accessible :title, :body
   validates :username,
   :uniqueness => {

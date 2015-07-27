@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-GenericApp::Application.config.secret_token = '074791f0a2c75a302416a3e4ec16efa834df483eb9651fb3781c481e2bd813afac0352d4575f38e676fbc61c2d26a0a15712c4f319cc758e0452006f548a98c8'
+Surveil::Application.config.secret_key = '74df9b0a9216f91be5f49886e1085a5ac28cb34d9ce7d2c22eb46662e66be4e4e357f98a880d4e885fc1afd09f0241b72ad9efe81e4b21988c0b1387eac29d75'

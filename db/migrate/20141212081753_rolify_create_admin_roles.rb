@@ -14,6 +14,6 @@ class RolifyCreateAdminRoles < ActiveRecord::Migration
 
     add_index(:admin_roles, :name)
     add_index(:admin_roles, [ :name, :resource_type, :resource_id ])
-    add_index(:admin_users_admin_roles, [ :admin_user_id, :admin_role_id ])
+    add_index :admin_users_admin_roles, [ :admin_user_id, :admin_role_id ], :name => "index_on_user_roles"
   end
 end

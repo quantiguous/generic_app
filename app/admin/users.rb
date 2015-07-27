@@ -1,4 +1,7 @@
 ActiveAdmin.register User do
+  permit_params :email, :first_name, :last_name, :password, :password_confirmation, :remember_me, :department_id, :location_id,
+                :username, :inactive, :title, :body, :role_id
+
   filter :id
   filter :username, :label=>"User Id"
   filter :email

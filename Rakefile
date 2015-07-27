@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-GenericApp::Application.load_tasks
+Surveil::Application.load_tasks

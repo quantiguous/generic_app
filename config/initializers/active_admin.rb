@@ -9,8 +9,8 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.download_links = [:csv]
-  config.site_title = "Generic App"
-  config.allow_comments = false
+  config.site_title = "Surveil"
+  config.comments = false
   # config.csv_options = { :col_sep => ';' }
 
 
@@ -126,7 +126,6 @@ ActiveAdmin.setup do |config|
   #
   config.batch_actions = false
 
-
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
@@ -213,8 +212,11 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+  config.clear_stylesheets!
+  config.register_stylesheet 'active_admin/active_admin.css'
 
-
+  config.clear_javascripts!
+  config.register_javascript 'active_admin.js'
 end
 module ActiveAdmin
   module Inputs

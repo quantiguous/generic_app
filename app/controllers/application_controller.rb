@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SecureHeaders
   protect_from_forgery
   ensure_security_headers
   before_filter :set_as_private

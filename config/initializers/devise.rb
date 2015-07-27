@@ -21,6 +21,8 @@ Devise.setup do |config|
     end
   end
 
+  config.secret_key = 'fefefd7f8bd9d1fcfd5413625d2269fc2e9c817c14736cc0806b52d9dffad0812e8eacf9d3e1f8f1776b57a5daf65eacf3179762d076c8c7b5d1e39195717638'
+
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
