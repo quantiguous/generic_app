@@ -9,7 +9,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.download_links = [:csv]
-  config.site_title = "Surveil"
+  config.site_title = "Generic App"
   config.comments = false
   # config.csv_options = { :col_sep => ';' }
 

@@ -29,7 +29,7 @@ ActiveAdmin.register AdminUser do
       end
     end
     column :inactive
-    default_actions
+    actions
   end
 
   show do |ad|
