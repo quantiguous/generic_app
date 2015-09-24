@@ -282,6 +282,7 @@ GEM
       rake (>= 0.8.1)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
+    power_assert (0.2.4)
     pr_geohash (1.0.0)
     progress_bar (1.0.3)
       highline (~> 1.6.1)
@@ -428,6 +429,8 @@ GEM
     sunspot_solr (2.2.0)
     term-ansicolor (1.3.2)
       tins (~> 1.0)
+    test-unit (3.1.3)
+      power_assert
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -525,6 +528,7 @@ DEPENDENCIES
   stringex
   sunspot_rails
   sunspot_solr
+  test-unit
   therubyracer
   timecop
   turnout
@@ -535,4 +539,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

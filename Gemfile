@@ -69,6 +69,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'cucumber-rails', :require => false
+  gem 'test-unit'
   gem 'coveralls', :require => false
   gem 'selenium-webdriver'
   gem 'faker'
