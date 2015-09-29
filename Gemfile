@@ -33,6 +33,8 @@ gem 'acts_as_list'
 gem 'activeadmin-sortable'
 gem 'therubyracer'
 gem "daemons"
+gem "sqlite3"
+
 # Used only if oracle db is being used
 group :production do
   gem 'activerecord-oracle_enhanced-adapter',:git => 'git://github.com/rsim/oracle-enhanced.git'
@@ -52,7 +54,6 @@ end
 
 group :development, :test do
   gem 'sunspot_solr'
-  gem "sqlite3"
   gem "rspec"
   gem 'rspec-rails', "2.14.0"
   gem 'rb-readline'
@@ -67,9 +68,9 @@ group :development, :test do
   gem "unicorn"
   gem 'rake'
   gem 'guard-rspec'
+  gem 'test-unit'
   gem 'guard-cucumber'
   gem 'cucumber-rails', :require => false
-  gem 'test-unit'
   gem 'coveralls', :require => false
   gem 'selenium-webdriver'
   gem 'faker'
