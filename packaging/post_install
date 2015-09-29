@@ -1,0 +1,3 @@
+#!/bin/bash -e
+cp /opt/$APP_NAME/packaging/database.yml.sample /opt/$APP_NAME/config/database.yml
+cp /opt/$APP_NAME/packaging/ldap.yml.sample /opt/$APP_NAME/config/ldap.yml

@@ -1,0 +1,12 @@
+build_dependencies:
+  - freetds-devel
+  - libaio
+dependencies:
+  - libaio
+targets:
+  centos-6:
+env:
+  - "LD_LIBRARY_PATH=/tmp/oracle/instantclient_11_1:$LD_LIBRARY_PATH"
+  - SKIP_INIT=yes
+before_precompile: packaging/before_precompile
+after_install: packaging/post_install

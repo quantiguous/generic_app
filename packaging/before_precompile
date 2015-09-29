@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+cp config/database.1.yml config/database.yml
+
+mkdir -p log
+touch log/production.log
+
+echo "Installing Oracle InstantClient Basic/SDK/SQLPlus..."
+mkdir -p /tmp/oracle
+cd /tmp/oracle
+
+files="instantclient-basic-11.1.0.7.0-linux-x86_64.zip instantclient-sdk-11.1.0.7.0-linux-x86_64.zip instantclient-sqlplus-11.1.0.7.0-linux-x86_64.zip"
+for file in $files ; do
+        wget -q "https://s3-us-west-1.amazonaws.com/pkgr.quantiguous.com/ora-11.1.0.7/$file"
+	unzip $file
+done
+
+cd instantclient_11_1
+ln -s libclntsh.so.11.1 libclntsh.so

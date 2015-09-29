@@ -1,0 +1,56 @@
+<%
+
+require 'cgi'
+require 'uri'
+
+begin
+  uri = URI.parse(ENV["CONFIG_LDAP_URL"])
+rescue URI::InvalidURIError
+  raise "Invalid CONFIG_LDAP_URL"
+end
+
+raise "No RACK_ENV or RAILS_ENV found" unless ENV["RAILS_ENV"] || ENV["RACK_ENV"]
+
+def attribute(name, value, force_string = false)
+  if value
+    value_string =
+      if force_string
+        '"' + value + '"'
+      else
+        value
+      end
+    "#{name}: #{value_string}"
+  else
+    ""
+  end
+end
+
+adapter = uri.scheme
+ssl = false if adapter == "ldap"
+ssl = true if adapter == "ldaps"
+
+username = URI.decode(uri.user)
+password = URI.decode(uri.password)
+
+host = uri.host
+port = uri.port
+
+attribute = uri.attributes
+base = uri.dn 
+
+params = CGI.parse(uri.query || "")
+
+%>
+
+<%= ENV["RAILS_ENV"] || ENV["RACK_ENV"] %>:
+  <%= attribute "host", host %>
+  <%= attribute "port", port %>
+  <%= attribute "attribute", attribute %>
+  <%= attribute "base", base %>
+  <%= attribute "admin_user", username %>
+  <%= attribute "admin_password", password, true %>
+  <%= attribute "ssl", ssl %>
+
+<% params.each do |key, value| %>
+  <%= key %>: <%= value.first %>
+<% end %>
