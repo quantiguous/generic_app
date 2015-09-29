@@ -5,15 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-unless Rails.env == 'production'
-  AdminUser.delete_all
+if AdminUser.all.empty?
   admin = AdminUser.new(username: "admin", email: "admin@example.com", password: "rootpassword",
          password_confirmation: "rootpassword")
   if admin.save
     admin.add_role :super_admin
   end
-
-  Role.delete_all
-
-  Role.create(:name=>"user")
 end
+
+Role.create(:name=>"user") if Role.find_by_name("user").nil?
