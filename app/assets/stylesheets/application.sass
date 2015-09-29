@@ -27,6 +27,20 @@ $wide-screen: 1200px
   display: none
 
 #generic-app
+  .footer
+    left: 0
+    margin-bottom: 0
+    position: fixed
+    bottom: 0px
+    right: 0
+    overflow: visible
+    background: #035E8F
+    min-height: 30px
+    &:after
+      clear: both
+    &:before, &:after
+      content: ""
+      display: table
   .header
     left: 0
     margin-bottom: 0
