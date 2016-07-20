@@ -1,6 +1,6 @@
 GenericApp::Application.routes.draw do
-  devise_for :users
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :users, class_name: "Base::User"
+  devise_for :admin_users, {class_name: "Base::AdminUser"}.merge(ActiveAdmin::Devise.config)
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

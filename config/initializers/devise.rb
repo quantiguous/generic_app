@@ -16,7 +16,7 @@ Devise.setup do |config|
   end
 
   Warden::Manager.after_authentication do |user,auth,opts|
-    if !user.is_a? AdminUser
+    if !user.is_a? Base::AdminUser
       user.sync_from_ldap
     end
   end

@@ -13,7 +13,7 @@
     %li
       = f.check_box :inactive
       = f.label "Inactive", :for => 'inactive_generic_app'
-    = f.input :role, :as => :multiple_select, :collection => Role.all.collect {|r| [r.name.camelize, r.id]}
+    = f.input :role, :as => :multiple_select, :collection => @roles
   = f.actions do
     = f.action :submit
     %li.cancel

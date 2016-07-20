@@ -37,4 +37,8 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  def current_ability
+    @current_ability ||= Base::Ability.new(current_user)
+  end
 end

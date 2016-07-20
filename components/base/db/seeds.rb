@@ -5,12 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-if Base::AdminUser.all.empty?
-  admin = Base::AdminUser.new(username: "admin", email: "admin@example.com", password: "rootpassword",
+if AdminUser.all.empty?
+  admin = AdminUser.new(username: "admin", email: "admin@example.com", password: "rootpassword",
          password_confirmation: "rootpassword")
   if admin.save
     admin.add_role :super_admin
   end
 end
 
-Base::Role.create(:name=>"user") if Base::Role.find_by_name("user").nil?
+Role.create(:name=>"user") if Role.find_by_name("user").nil?

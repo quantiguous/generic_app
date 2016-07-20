@@ -67,6 +67,8 @@ ActiveAdmin.setup do |config|
   config.before_filter :authenticate_inactive_active_admin_user!
 
   config.authorization_adapter = ActiveAdmin::CanCanAdapter
+
+  config.cancan_ability_class = "Base::Ability"
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -218,6 +220,7 @@ ActiveAdmin.setup do |config|
   config.clear_javascripts!
   config.register_javascript 'active_admin.js'
 end
+
 module ActiveAdmin
   module Inputs
     class MultipleSelectInput < Formtastic::Inputs::SelectInput

@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 ruby "2.2.2"
+
+path "components" do
+  gem "base"
+end
+
 gem 'roo'
 gem "flot-rails"
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.6'
 gem 'haml-rails'
 gem "devise", ">= 2.2.3"
 gem 'cancancan', '~> 1.10'

@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Base::User, :as => 'User' do
   permit_params :email, :first_name, :last_name, :password, :password_confirmation, :remember_me, :department_id, :location_id,
                 :username, :inactive, :title, :body, role_ids: []
 
@@ -12,7 +12,7 @@ ActiveAdmin.register User do
   filter :created_at
   filter :updated_at
   filter :sign_in_count
-  filter :roles_name, :as => :select, :collection => proc {(User::Roles).collect {|r| [r.humanize, r]}.sort}
+  filter :roles_name, :as => :select, :collection => proc {(Base::User::Roles).collect {|r| [r.humanize, r]}.sort}
 
   index do
     column "Id" do |user|
@@ -57,6 +57,18 @@ ActiveAdmin.register User do
   end
 
   form :partial => "form"
+
+  controller do
+    def new
+      @roles = Base::Role.all.collect {|r| [r.name.camelize, r.id]}
+      super
+    end
+
+    def edit
+      @roles = Base::Role.all.collect {|r| [r.name.camelize, r.id]}
+      super
+    end
+  end
 
   csv :download_links => true do
     column("Id") {|user| user.id}

@@ -1,4 +1,4 @@
-ActiveAdmin.register AdminUser do
+ActiveAdmin.register Base::AdminUser, :as => 'AdminUser' do
   permit_params :email, :username, :password, :password_confirmation, :remember_me, :inactive,:title, :body
   filter :id
   filter :email
@@ -83,25 +83,25 @@ ActiveAdmin.register AdminUser do
 
 
   member_action :make_user_admin, :method => :put do
-      user = AdminUser.find(params[:id])
+      user = Base::AdminUser.find(params[:id])
       user.add_role :user_admin if current_admin_user.has_role? :super_admin
       redirect_to :back
   end
 
   member_action :remove_user_admin, :method => :put do
-      user = AdminUser.find(params[:id])
+      user = Base::AdminUser.find(params[:id])
       user.remove_role :user_admin if current_admin_user.has_role? :super_admin
       redirect_to :back
   end
 
   member_action :make_admin, :method => :put do
-      user = AdminUser.find(params[:id])
+      user = Base::AdminUser.find(params[:id])
       user.add_role :admin if current_admin_user.has_role? :super_admin
       redirect_to :back
   end
 
   member_action :remove_admin, :method => :put do
-      user = AdminUser.find(params[:id])
+      user = Base::AdminUser.find(params[:id])
       user.remove_role :admin if current_admin_user.has_role? :super_admin
       redirect_to :back
   end
