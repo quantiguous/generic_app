@@ -34,6 +34,7 @@ gem 'activeadmin-sortable'
 gem 'therubyracer'
 gem "daemons"
 gem "sqlite3"
+gem 'dotenv'
 
 # Used only if oracle db is being used
 group :production do
