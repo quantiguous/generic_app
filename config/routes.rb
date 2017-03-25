@@ -1,4 +1,11 @@
 GenericApp::Application.routes.draw do
+  resources :branches, except: :index do
+    collection do
+      get :index
+      put :index
+    end
+  end
+  get 'cl_incoming_records_file_summary' => 'cl_incoming_records#incoming_file_summary'
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
 

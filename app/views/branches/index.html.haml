@@ -1,0 +1,26 @@
+%br
+%h1 Branches
+%br
+%h2.collapsible
+  Advanced Search
+  %span.caret
+.collapsible-content
+  = render :partial => 'advanced_search'
+%br
+= link_to_previous_page @records, 'Previous', method: :put, params: params
+= link_to_next_page @records, 'Next', method: :put, params: params
+%br
+%table.fu-table.table-bordered.table-striped.table-hover{:style => 'width:100%; border:1px'}
+  .thead
+    %tr
+      %th{:style=>'text-align:left; font-size:12px; background-color: lightblue;'}
+        Branch
+      %th{:style=>'text-align:left; font-size:12px; background-color: lightblue;'}
+        Cluster
+  .tbody
+    - @records.each do |record|
+      %tr
+        %td{:style=>'text-align:left;'}
+          = record.name
+        %td{:style=>'text-align:left;'}
+          = record.cluster.name

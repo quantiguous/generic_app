@@ -1,0 +1,16 @@
+Cluster.seed_once(:id,
+  { name: 'Central Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'East Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'New Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'North Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'North West Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'Shahdara', city_id: City.find_by_name('Delhi').id},
+  { name: 'South Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'South East Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'South West Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'West Delhi', city_id: City.find_by_name('Delhi').id},
+  { name: 'North Goa', city_id: City.find_by_name('Goa').id},
+  { name: 'South Goa', city_id: City.find_by_name('Goa').id},
+  { name: 'Mumbai', city_id: City.find_by_name('Mumbai').id},
+  { name: 'Mumbai Suburban', city_id: City.find_by_name('Mumbai').id}
+)
