@@ -1,11 +1,18 @@
-= form_tag branches_path, :method => :put, :class => 'form-horizontal', :autocomplete=>"off" do
-  .control-group
-    = label_tag :cluster_id, "Cluster ID*", :class => 'control-label'
-    = select_tag :cluster_id, options_for_select(Cluster.all.map{|b| [b.name,b.id]},params[:status_code]),:prompt => 'ANY'
-  .form-actions
-    = submit_tag "Search", :name => nil, :class => 'btn btn-primary', :id => "adv_search_button"
-    = button_tag "Reset", :type => 'button', :value=>'Reset', :class => 'btn', :id => 'reset'
+%h2.collapsible
+  Advanced Search
+  %span.caret
+.collapsible-content
+  = form_tag branches_path, :method => :put, :class => 'form-horizontal', :autocomplete=>"off" do
+    .control-group
+      = label_tag :cluster_id, "Cluster ID*", :class => 'control-label'
+      = select_tag :cluster_id, options_for_select(Cluster.all.map{|b| [b.name,b.id]}, params[:cluster_id]), :prompt => 'ANY'
+      = hidden_field_tag :page, params[:page] || 1
+    .form-actions
+      = submit_tag "Search", :name => nil, :class => 'btn btn-primary', :id => "adv_search_button", onclick: "$('#page').val(1)"
+      = button_tag "Reset", :type => 'button', :value=>'Reset', :class => 'btn', :id => 'reset'
 
 - if @searcher.errors.present?
   :javascript
     $('.collapsible-content').show(); 
+    
+= advanced_search_page_links

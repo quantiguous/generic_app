@@ -1,13 +1,8 @@
 %br
 %h1 Branches
 %br
-%h2.collapsible
-  Advanced Search
-  %span.caret
-.collapsible-content
-  = render :partial => 'advanced_search'
+= render :partial => 'advanced_search'
 %br
-= will_paginate @records
 %br
 %table.fu-table.table-bordered.table-striped.table-hover{:style => 'width:100%; border:1px'}
   .thead
