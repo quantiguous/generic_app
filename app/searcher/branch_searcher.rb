@@ -14,9 +14,9 @@ class BranchSearcher
   
   def paginate
     if valid?
-      find.page(page).per(PER_PAGE)
+      find.paginate(per_page: PER_PAGE, page: page)
     else
-      Branch.none.page(page).per(PER_PAGE)
+      Branch.paginate(per_page: PER_PAGE, page: page)
     end
   end
 

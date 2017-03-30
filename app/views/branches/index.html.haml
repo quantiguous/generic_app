@@ -7,8 +7,7 @@
 .collapsible-content
   = render :partial => 'advanced_search'
 %br
-= link_to_previous_page @records, 'Previous', method: :put, params: params
-= link_to_next_page @records, 'Next', method: :put, params: params
+= will_paginate @records
 %br
 %table.fu-table.table-bordered.table-striped.table-hover{:style => 'width:100%; border:1px'}
   .thead
